@@ -10,9 +10,11 @@ public class TestMain {
 		
 		ApplicationContext   context = new ClassPathXmlApplicationContext("AppConfig.xml");
 		 
-        Person myperson = context.getBean("person", Person.class);
+        Person person = context.getBean("person", Person.class);
  
-        System.out.println("Name= " + myperson.getName());
+        System.out.println("Name= " + person.getName());
   
+        
+        
     }
 }

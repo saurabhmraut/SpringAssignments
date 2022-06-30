@@ -1,5 +1,8 @@
 package assignment8;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
@@ -28,4 +31,21 @@ public class Person implements DisposableBean, InitializingBean {
     public void destroy() throws Exception {
         System.out.println("Destroy method of person bean is invoked!");
     }
+    
+    // assignment 9 
+    @Override
+	public String toString() {
+		return "Person [Name=" + name + "]";
+	}
+	
+	@PostConstruct
+	public void start() {
+		System.out.println("starting method");
+	}
+	
+	@PreDestroy
+	public void end() {
+		System.out.println("ending method");
+		
+	}
 }
