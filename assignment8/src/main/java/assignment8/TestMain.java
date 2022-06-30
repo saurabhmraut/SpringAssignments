@@ -8,12 +8,13 @@ public class TestMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		ApplicationContext   context = new ClassPathXmlApplicationContext("AppConfig.xml");
+		ClassPathXmlApplicationContext   context = new ClassPathXmlApplicationContext("AppConfig.xml");
 		 
         Person person = context.getBean("person", Person.class);
  
         System.out.println("Name= " + person.getName());
-  
+  	
+		context.close();
         
         
     }
